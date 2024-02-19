@@ -4,7 +4,6 @@ from load_dataset import BuildDataset
 from global_args import PAD_INDEX, SOS_INDEX, EOS_INDEX, UNK_INDEX, toks_and_inds, SOS_TOKEN, EOS_TOKEN, PAD_TOKEN
 
 
-
 if __name__ == "__main__": 
     #import data
     from data import train_data, valid_data, test_data 
