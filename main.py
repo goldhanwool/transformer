@@ -2,7 +2,7 @@ import numpy as np
 from preprocess import DataPreprocess
 from load_dataset import BuildDataset
 from global_args import PAD_INDEX, SOS_INDEX, EOS_INDEX, UNK_INDEX, toks_and_inds, SOS_TOKEN, EOS_TOKEN, PAD_TOKEN
-
+from embedding import forward, build, input_dim, output_dim
 
 if __name__ == "__main__": 
     #import data
@@ -24,3 +24,10 @@ if __name__ == "__main__":
     
     train_data_batches = buildDataset_obj.add_tokens(train_data, batch_size=2)
     train_source, train_target = buildDataset_obj.build_dataset(train_data_batches, vocabs)
+
+    """
+        embedding layer
+    """
+
+    w, v, m, v_hat, m_hat = build(input_dim, output_dim)
+    embedding_nparray = forward(train_source, w)
